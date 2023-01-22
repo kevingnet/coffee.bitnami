@@ -1,0 +1,126 @@
+
+I had a few issues with deployment, I was able to do a currently manual deployment, even though I can still run docker and it builds and runs the machines, no issues. The main issue I was having is that the web hosts, I tried 3, Ubuntu, Amazon Linux, and then went with Bitnami, I was able to make it run in bitnami, but later I figured that it wasn't the issue with the other two types of servers, machines were ok, so were network and security configurations. I went through a lot of docs and posts and they don't mention what the real issue is, so many do work arounds that used to work in some versions. Long story short the issue was that you had to run the angular application with some parameters so that it would allow incoming connections. I had the server actually running so it could have been tested that way, but I really wanted to show the interface.
+
+I'll be working on the other Nice to Haves that were requested in the pdf. I'll be posting another version, later, currently it works, the whole thing, you can test it locally and externally, it works with curl, postman and the angular app, so it all seems to be working ok. 
+
+Here is some information on where the stuff is and how to test it. Btw, I ended up going with Apache because I was suspecting some issues with nginx, poor thing it was probably good all along and it was just that configuration issue. Let me work on the next email with info about the current configuration and how to go about testing it. I'll also list some of the cool features.
+
+
+----------------------------------------------------------------------------------------
+
+AWS EC2 one instance houses both client and server, as of now there is no database, the old code does have it and it works, but only tested locally.
+
+Public Domain Name and Public IP Address, both should work:
+ec2-35-81-164-71.us-west-2.compute.amazonaws.com
+35.81.164.71
+Ports:
+8081 = Server
+4200 = Client
+80 & 8080 aren't yet working, as bitnami had preconfigured port 4200, I played quite a bit trying to make the others work, however, at least these work.
+APIs:
+Server:
+/ (greeting)
+/error (test by causing a server error, there are default handlers for these)
+/level (GET) parameters: none, returns: json(water and beans, levels, as percentages)
+/brew (POST) parameters: [optional] {cup_size, granularity, delay}, returns: json(water and beans, levels, as current values)
+/refill (POST) parameters: [optional] {water and beans levels, as proposed values}, returns: json(water and beans, levels, as current values)
+
+Client:
+/level shows the two bars with the water and coffee beans levels
+/brew allows users to select from 3 cup sizes through selecting a picture of the to be selected sizes, Tall, Grande, and Venti. A range input bar to select the granularity and a range input bar to select the delay
+/refill shows two input text boxes to enter values for water and beans
+/ (redirects to /brew)
+Features:
+Server access is available for tests from an external computer, for instance http://35.81.164.71:8081/brew
+Client can be accessed for the above APIs, for instance http://35.81.164.71:4200/brew
+Tests were performed using curl, postman and the client, all were done manually, no unit tests yet, other than those that were already available in the code I reused from a sample app, most of it was modified.
+The APIs use defaults so that you shouldn't need to send a json payload
+The Server sends back a json string when called, currently error handling and reporting isn't the best, but there is some
+The Client has some timer functions so that it can react if for example another client is 'brewing' and therefore using up the water/beans, at some point if the levels reach zero, the brew interface will not allow to brew and it will show a message, so that the user can 'refill' the machine.
+The brew page, when you click on the brew button it happens very fast, however, if you select greater than zero delay, it will disable the button and the two range bars that are used to input grain size and delay in seconds, currently limited to 60 seconds, arbitrarily. While the delay happens a gif appears with a walking cup of coffee, to make things more interesting. If another client is brewing and one of the levels reaches zero, the button gets disabled, etc...
+The refill page shows two input text controls to specify how much water/beans to refill, defaults to max 480, 240 for water and beans respectively.
+The level page will show two bars representing the current levels of water and coffee beans. If another client or test bot brews, there is a one second timer that will update the bars so that the user can know.
+Because the API is simple and minimal, there is no orthogonal matching for the different operations, such as GET, POST, PUT, DELETE, etc.. so only one GET for level, and two POSTS for brew and refill.
+Todo:
+Sort out the rest of the docker deployment stuff, part of it is already automated, part of it manual, due to having to sort out connectivity issues
+Creating documentation with Doxygen. I'll try to post and make available the documentation online using an S3 bucket since the pages are mostly static html with minimal script.
+Might have time to create tests
+Could add redis support to save the one db record that contains water/beans levels, perhaps even log the machine activity, etc...
+As for making the application scalable, elastic IP would be one way, since there is no database, should probably find a way to share the data among the potential instances, as of now it should work plenty fast as there is no db, but that's also a limitation
+Security, as of now, because of the connectivity and other issues found, the system is almost completely open, the server is, eventually I would lock down the server so that only the client can see it through the private IP address. I would add OAuth2 authentication, better handling of http headers so as to increase security. If time allows, secure the API via Access Control, using the RBAC (MAC, DAC and Attribute support) model, as I'm most familiar with it and found a way to make it *very* fast using a caching system I also implemented.
+
+CLIENT URLs
+http://ec2-35-81-164-71.us-west-2.compute.amazonaws.com:4200/level
+http://ec2-35-81-164-71.us-west-2.compute.amazonaws.com:4200/brew
+http://ec2-35-81-164-71.us-west-2.compute.amazonaws.com:4200/refill
+SERVER URLs
+http://ec2-35-81-164-71.us-west-2.compute.amazonaws.com:8081/level
+http://ec2-35-81-164-71.us-west-2.compute.amazonaws.com:8081/brew
+http://ec2-35-81-164-71.us-west-2.compute.amazonaws.com:8081/refill
+
+----------------------------------------------------------------------------------------
+
+A few other links to test the back end:
+
+curl -v -H "Content-Type: application/json" -X POST http://35.81.164.71:8081/
+curl -v -H "Content-Type: application/json" -X GET http://35.81.164.71:8081
+curl -v -H "Content-Type: application/json" -X GET http://35.81.164.71:8081/error
+
+curl -v -X GET http://35.81.164.71:8081/level
+curl -v -X POST http://localhost:8081/refill
+curl -X POST http://35.81.164.71:8081/brew
+curl -v -H "Content-Type: application/json" -X POST -d '{"water":"11","beans":22}' http://35.81.164.71:8081/refill
+curl -v -H "Content-Type: application/json" -X POST -d '{"beans":22}' http://35.81.164.71:8081/refill
+curl -v -H "Content-Type: application/json" -X POST -d '{"cup_size":5,"grain_size":6,"delay":12}' http://35.81.164.71:8081/brew
+curl -v -H "Content-Type: application/json" -X POST -d '{"cup_size":5,"grain_size":6}' http://35.81.164.71:8081/brew
+curl -v -H "Content-Type: application/json" -X POST -d '{"cup_size":15,"grain_size":6}' http://35.81.164.71:8081/brew
+
+cup_size valid values: 4, 5, 6 sml, med, lrg
+grain_size 1-10
+delay 0-60
+
+
+----------------------------------------------------------------------------------------
+
+Here is the info I have so far, first the links where to find the code, then the aws link to view the app (as soon as it's up)
+and lastly the challenges faced and what I have to do over the weekend to clean up some of the code, and have the deployment package as docker-compose ready
+
+ 
+https://github.com/kevingnet/coffee_machine
+- has the original code (in transition) with MongoDB database
+https://github.com/kevingnet/coffe_machine2
+- code is being stripped of database, explanation to follow
+- a third version with cleaner code will be available over the weekend
+- attempted to use redis as a replacement for mongodb, but there wouldn't have been enough time to do correctly
+
+
+http://ec2-35-86-119-243.us-west-2.compute.amazonaws.com:8081/brew
+-it has the front end up, currently not tied to the backend as I'm still stripping out some db code, and cleaning up
+ 
+
+Challenges:
+- spent almost 2 days with fixing mongodb, it turns out, there is no fix, it worked well on my machine, the issue is that
+mongo db does not work with a few newer versions of aws ubuntu, they're working on it, meanwhile I had to strip out 
+all the db code
+- would have used redis, tried to, but it would have taken a bit of time to do right
+- as it turns out, there was not really a need for db, because there is really just one 'record' that is the data to be operated
+on, water/beans levels, the other 3 pieces of data are parameters to brew, cup_size, delay and bean granularity, wish I 
+would have started like that from the get go, but wanted to have it in place for db log storage such as when people buy
+coffee, save those records.
+
+I'll take another shot at automated docker deployment
+
+----------------------------------------------------------------------------------------
+
+I tried to generate documentation, tried about 5 different solutions, including renaming the *.ts files into *.java to try to trick doxygen into compliance, no such luck. There were a couple of packages with the same name TSDocs and a JSDoc, that "created" documentation, but it was all empty, I suppose the expected to find the code documented during the development as it is usual. I usually run doxygen doxywizard, which works great with Java and C++, but it was erroring out with angular. 
+On the other hand, the testing went sort of ok, I have not written any tests just the ones that were already there in the sample app. I ran the command 'ng test' and it opened up a chrome browser and from 10 tests 5 passed for the angular app, the server app could not be tested as it is something to be tested in a different way.
+
+These are some ways to access the newer code and how to ssh into the aws ec2 machine. The pem file is attached as you will need it to access.
+ss
+ssh -i bitnami_keypair.pem bitnami@35.81.164.7
+https://github.com/kevingnet/coffee.bitnami
+
+
+
+
+
