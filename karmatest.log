@@ -1,0 +1,499 @@
+∙[1] [284]  ~/Code/coffee/coffee-app 
+ kg@trex[15:31:26] $ ng test
+Your global Angular CLI version (13.3.1) is greater than your local version (13.0.4). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+✔ Browser application bundle generation complete.
+22 01 2023 15:31:35.398:WARN [karma]: No captured browser, open http://localhost:9876/
+22 01 2023 15:31:35.403:INFO [karma-server]: Karma v6.3.20 server started at http://localhost:9876/
+22 01 2023 15:31:35.403:INFO [launcher]: Launching browsers Chrome with concurrency unlimited
+22 01 2023 15:31:35.414:INFO [launcher]: Starting browser Chrome
+22 01 2023 15:31:35.772:INFO [Chrome 108.0.0.0 (Linux x86_64)]: Connected on socket eKnYEUI4HetDK8hLAAAB with id 96332549
+Chrome 108.0.0.0 (Linux x86_64) RefillMachineComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/refill-machine/refill-machine.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) MachineLevelComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/machine-level/machine-level.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) AppComponent should render title FAILED
+	Error: Expected undefined to contain 'Apple Virtual Coffee Brewing Machine app is running!'.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/app.component.spec.ts:33:66)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) BrewCoffeeComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/brew-coffee/brew-coffee.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) CoffeeService should be created FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1713:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/services/coffee.service.spec.ts:14:21)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64): Executed 10 of 10 (5 FAILED) (0.112 secs / 0.076 secs)
+TOTAL: 5 FAILED, 5 SUCCESS
+22 01 2023 15:31:56.341:INFO [Chrome 108.0.0.0 (Linux x86_64)]: Disconnected browser returned on socket RIg-cSSpIGZGj8uNAAAD with id 96332549.
+Chrome 108.0.0.0 (Linux x86_64) CoffeeService should be created FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1713:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/services/coffee.service.spec.ts:14:21)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) BrewCoffeeComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/brew-coffee/brew-coffee.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) MachineLevelComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/machine-level/machine-level.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) AppComponent should render title FAILED
+	Error: Expected undefined to contain 'Apple Virtual Coffee Brewing Machine app is running!'.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/app.component.spec.ts:33:66)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) RefillMachineComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/refill-machine/refill-machine.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64): Executed 10 of 10 (5 FAILED) (0.054 secs / 0.043 secs)
+Chrome 108.0.0.0 (Linux x86_64) MachineLevelComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/machine-level/machine-level.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) BrewCoffeeComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/brew-coffee/brew-coffee.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) AppComponent should render title FAILED
+	Error: Expected undefined to contain 'Apple Virtual Coffee Brewing Machine app is running!'.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/app.component.spec.ts:33:66)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) CoffeeService should be created FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1713:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/services/coffee.service.spec.ts:14:21)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) RefillMachineComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/refill-machine/refill-machine.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64): Executed 10 of 10 (5 FAILED) (0.088 secs / 0.067 secs)
+Chrome 108.0.0.0 (Linux x86_64): Executed 10 of 10 (5 FAILED) (0.088 secs / 0.067 secs)
+22 01 2023 15:32:48.436:ERROR [launcher]: Chrome crashed.
+	[931698:931723:0122/153135.758404:ERROR:nss_util.cc(349)] After loading Root Certs, loaded==false: NSS error code: -8018
+[931698:931731:0122/153136.634608:ERROR:object_proxy.cc(623)] Failed to call method: org.freedesktop.DBus.StartServiceByName: object_path= /org/freedesktop/DBus: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+22 01 2023 15:32:48.436:ERROR [launcher]: Chrome stdout: 
+22 01 2023 15:32:48.436:ERROR [launcher]: Chrome stderr: [931698:931723:0122/153135.758404:ERROR:nss_util.cc(349)] After loading Root Certs, loaded==false: NSS error code: -8018
+[931698:931731:0122/153136.634608:ERROR:object_proxy.cc(623)] Failed to call method: org.freedesktop.DBus.StartServiceByName: object_path= /org/freedesktop/DBus: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+22 01 2023 15:32:48.453:INFO [launcher]: Trying to start Chrome again (1/2).
+22 01 2023 15:32:48.803:INFO [Chrome 108.0.0.0 (Linux x86_64)]: Disconnected browser returned on socket gu2RB_3ngeBXtCRiAAAF with id 96332549.
+Chrome 108.0.0.0 (Linux x86_64) RefillMachineComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/refill-machine/refill-machine.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) CoffeeService should be created FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1713:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/services/coffee.service.spec.ts:14:21)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) AppComponent should render title FAILED
+	Error: Expected undefined to contain 'Apple Virtual Coffee Brewing Machine app is running!'.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/app.component.spec.ts:33:66)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) MachineLevelComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/machine-level/machine-level.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) BrewCoffeeComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/brew-coffee/brew-coffee.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64): Executed 9 of 10 (5 FAILED) (0.041 secs / 0.049 secs)
+Chrome 108.0.0.0 (Linux x86_64): Executed 9 of 10 (5 FAILED) (0.041 secs / 0.049 secs)
+TOTAL: 5 FAILED, 4 SUCCESS
+22 01 2023 15:32:50.661:ERROR [launcher]: Chrome crashed.
+	[941385:941424:0122/153248.786412:ERROR:nss_util.cc(349)] After loading Root Certs, loaded==false: NSS error code: -8018
+[941385:941421:0122/153249.671467:ERROR:object_proxy.cc(623)] Failed to call method: org.freedesktop.DBus.StartServiceByName: object_path= /org/freedesktop/DBus: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+22 01 2023 15:32:50.661:ERROR [launcher]: Chrome stdout: 
+22 01 2023 15:32:50.661:ERROR [launcher]: Chrome stderr: [941385:941424:0122/153248.786412:ERROR:nss_util.cc(349)] After loading Root Certs, loaded==false: NSS error code: -8018
+[941385:941421:0122/153249.671467:ERROR:object_proxy.cc(623)] Failed to call method: org.freedesktop.DBus.StartServiceByName: object_path= /org/freedesktop/DBus: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+22 01 2023 15:32:50.668:INFO [launcher]: Trying to start Chrome again (2/2).
+22 01 2023 15:32:51.044:INFO [Chrome 108.0.0.0 (Linux x86_64)]: Disconnected browser returned on socket mg00-at0nnx5ND_rAAAH with id 96332549.
+Chrome 108.0.0.0 (Linux x86_64) CoffeeService should be created FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at TestBedRender3.inject (node_modules/@angular/core/fesm2015/testing.mjs:1713:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/services/coffee.service.spec.ts:14:21)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) RefillMachineComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/refill-machine/refill-machine.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) BrewCoffeeComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/brew-coffee/brew-coffee.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) MachineLevelComponent should create FAILED
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'CoffeeService', 'HttpClient', 'HttpClient' ] })
+	NullInjectorError: R3InjectorError(DynamicTestModule)[CoffeeService -> HttpClient -> HttpClient]: 
+	  NullInjectorError: No provider for HttpClient!
+	    at NullInjector.get (node_modules/@angular/core/fesm2015/core.mjs:11105:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11272:1)
+	    at injectInjectorOnly (node_modules/@angular/core/fesm2015/core.mjs:4746:1)
+	    at ɵɵinject (node_modules/@angular/core/fesm2015/core.mjs:4750:1)
+	    at Object.CoffeeService_Factory [as factory] (ng:///CoffeeService/ɵfac.js:4:41)
+	    at R3Injector.hydrate (node_modules/@angular/core/fesm2015/core.mjs:11442:1)
+	    at R3Injector.get (node_modules/@angular/core/fesm2015/core.mjs:11261:1)
+	    at NgModuleRef.get (node_modules/@angular/core/fesm2015/core.mjs:21800:1)
+	    at Object.get (node_modules/@angular/core/fesm2015/core.mjs:21477:1)
+	Error: Expected undefined to be truthy.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/components/machine-level/machine-level.component.spec.ts:23:23)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64) AppComponent should render title FAILED
+	Error: Expected undefined to contain 'Apple Virtual Coffee Brewing Machine app is running!'.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (src/app/app.component.spec.ts:33:66)
+	    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:1)
+	    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:1)
+Chrome 108.0.0.0 (Linux x86_64): Executed 6 of 10 (2 FAILED) (0.01 secs / 0.012 secs)
+Chrome 108.0.0.0 (Linux x86_64): Executed 6 of 10 (2 FAILED) (0.01 secs / 0.012 secs)
+Chrome 108.0.0.0 (Linux x86_64) ERROR
+  Disconnected , because no message in 30000 ms.
+Chrome 108.0.0.0 (Linux x86_64): Executed 6 of 10 (2 FAILED) DISCONNECTED (30.095 secs / 0.012 secs)
+Chrome 108.0.0.0 (Linux x86_64): Executed 6 of 10 (2 FAILED) DISCONNECTED (30.095 secs / 0.012 secs)
+Chrome 108.0.0.0 (Linux x86_64): Executed 6 of 10 (2 FAILED) DISCONNECTED (30.095 secs / 0.012 secs)
+Chrome 108.0.0.0 (Linux x86_64): Executed 6 of 10 (2 FAILED) DISCONNECTED (30.095 secs / 0.012 secs)
+
