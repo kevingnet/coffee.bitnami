@@ -1,0 +1,220 @@
+.brew {
+  text-align: left;
+  max-width: 1350px;
+  margin: auto;
+}
+
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 500px;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  width: 500px;
+  margin: 0;
+
+}
+
+/* HIDE RADIO */
+[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 3px solid #D2B48C;
+  filter: contrast(160%);
+}
+
+[type=radio] + img {
+  filter: grayscale(20%);
+}
+/*Filter styles*/
+.saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }
+
+.radiopick {
+  justify-content: left;
+  width:250px;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+hr.style-seven {
+  overflow: visible; /* For IE */
+  height: 30px;
+  width: 700px;
+  margin-top: -1px;
+  margin-left: -40px;
+  border-style: solid;
+  border-color: #A0522D;
+  border-width: 12px 0 0 0;
+  border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -37px;
+  border-style: solid;
+  border-color: #D2B48C;
+  border-width: 0 0 7px 0;
+  border-radius: 20px;
+}
+
+/* Glyph, by Harry Roberts */
+hr.style-eight {
+  overflow: visible; /* For IE */
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
+}
+hr.style-eight:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+
+@font-face {
+  font-family: 'bilbo_swash_capsregular';
+  src: local('assets/bilboswashcaps-regular-webfont.woff2') format('woff2'),
+       local('assets/bilboswashcaps-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'coffeetea_demoregular';
+  src: local('assets/coffeeteademo-regular-webfont.woff2') format('woff2'),
+       local('assets/coffeeteademo-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'nexa_scriptregular';
+  src: local('assets/fontfabric_-_nexa_script-webfont.woff2') format('woff2'),
+       local('assets/fontfabric_-_nexa_script-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'nexa_scriptbold';
+  src: local('assets/fontfabric_-_nexa_script_bold-webfont.woff2') format('woff2'),
+       local('assets/fontfabric_-_nexa_script_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'nexa_scriptheavy';
+  src: local('assets/fontfabric_-_nexa_script_heavy-webfont.woff2') format('woff2'),
+       local('assets/fontfabric_-_nexa_script_heavy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'nexa_scriptlight';
+  src: local('assets/fontfabric_-_nexa_script_light-webfont.woff2') format('woff2'),
+       local('assets/fontfabric_-_nexa_script_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'nexa_scriptsemi_bold';
+  src: local('assets/fontfabric_-_nexa_script_semi_bold-webfont.woff2') format('woff2'),
+       local('assets/fontfabric_-_nexa_script_semi_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'nexa_scriptthin';
+  src: local('assets/fontfabric_-_nexa_script_thin-webfont.woff2') format('woff2'),
+       local('assets/fontfabric_-_nexa_script_thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'monsieur_la_doulaiseregular';
+  src: local('./assets/MonsieurLaDoulaise-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+

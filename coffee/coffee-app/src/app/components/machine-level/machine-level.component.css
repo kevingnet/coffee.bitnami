@@ -1,0 +1,84 @@
+.submit-form {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.beans::-webkit-progress-value {
+  background: linear-gradient(#FFDEAD	 0%, #DEB887 50%, #CD853F	 75%, #8B4513 100%);
+  display:inline-block;margin-right:10px;
+}
+.water::-webkit-progress-value {
+  background: linear-gradient(#87CEFA 0%, #00BFFF 50%, #1E90FF 75%, #4169E1 100%);
+  display:inline-block;margin-right:10px;
+}
+
+body {
+  font-family: sans-serif;
+  background: #888;
+  margin-top: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 5px 20px 30px 20px;
+  background: white;
+  text-align: center;
+  border-radius: 15px;
+}
+
+progress {
+  width: 100%;
+  display: block;
+  margin: 0px auto 20px auto;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress:not([value]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background: linear-gradient(#ccc 0%, #eee 50%, #eee 50%, #ccc 100%);
+  border-radius: 3px;
+  width: 500px;
+  margin: 0px auto;
+  max-width: 500px;
+  height: 30px;
+}
+
+progress::-webkit-progress-value {
+    border-radius: 3px;
+}
+
+
+progress {
+  border-radius: 3px;
+  width: 500px;
+  margin: 0px auto;
+  max-width: 500px;
+  height: 30px;
+}
+
+progress::-moz-progress-value {
+    border-radius: 3px;
+}

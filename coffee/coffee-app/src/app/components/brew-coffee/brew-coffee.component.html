@@ -1,0 +1,213 @@
+<style>
+  img {
+    border: 12px solid #556B2F;
+  }
+  .apple, img::-webkit-progress-value {
+    border: 12px solid #eee;
+  }
+  .cupsizes, img::-webkit-progress-value {
+    border: 0px solid #ddd;
+  }
+
+.logo {
+    font-size: 34px;
+    margin-left: 160px;
+  }
+
+  #myrange {
+  /*background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);*/
+  background: linear-gradient(to right, #DEB887 0%, #CD853F 50%, #8B4513	 75%, #8B4513 100%);
+  box-shadow: -2px 0 0 4px #FDF5E6	;
+  border-radius: 8px;
+  outline: none;
+  -webkit-appearance: none;
+}
+#myrange2 {
+  background: linear-gradient(#A9A9A9 0%, #808080 50%, #696969	 75%, #333 100%);
+  box-shadow: -2px 0 0 4px #eee	;
+  border-radius: 8px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+@font-face {
+  font-family: 'monsieur';
+  src: local('./assets/MonsieurLaDoulaise-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+hr.h4title {
+  font-family: "monsieur_la_doulaiseregular", normal;
+}
+
+</style>
+  <div class="logo">
+    <h4 class="h4title">Brew a Cup of Coffee</h4>
+  </div>
+    <p>
+      <img src="assets/applecoffee.jpg" alt="Apple Coffee" style="float:right" width="300" height="300" class="apple"/>
+    </p>        <table>
+
+      <tr>
+        <td>
+          <div>Tall</div>
+        </td>
+        <td>
+          <div>  Grande</div>
+        </td>
+        <td>
+          <div> Venti</div>
+        </td>
+      </tr>
+      <tr>
+          <td>
+            <label class="radiopick">
+              <input type="radio" id="radio4" name="cupsizes" value="4" (click)="changeSize(4);"/>
+              <img src="assets/coffeesizes4.jpg" class="cupsizes" (click)="changeSize(4);" style="margin-top: 27px;">
+            </label>
+          </td>
+          <td>
+            <label class="radiopick">
+              <input type="radio" id="radio5" name="cupsizes" value="5" checked (click)="changeSize(5);"/>
+              <img src="assets/coffeesizes5.jpg" class="cupsizes" checked (click)="changeSize(5);" style="margin-top: 17px;">
+            </label>
+          </td>
+          <td>
+            <label class="radiopick">
+              <input type="radio" id="radio6" name="cupsizes" value="6" (click)="changeSize(6);"/>
+              <img src="assets/coffeesizes6.jpg" class="cupsizes" (click)="changeSize(6);">
+            </label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <input min="4" max="6" type="hidden"
+            type="hidden"
+            class="form-control"
+            id="theSize"
+            required
+            [(ngModel)]='brew.cup_size'
+            name="size"
+          />
+        </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr class="style-seven" >
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="1">
+            <label for="grain">Fine Grain</label>
+          </td>
+          <td colspan="1">
+            <div class="right">
+              <label for="grain" >Coarse</label>
+            </div>
+          </td>
+          <td colspan="1">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <label class="grain">
+              <input type="range" id="myrange" name="grain" list="markers"
+                  min="1" max="10" class="grain"
+                  [disabled]="running"
+                  [(ngModel)]=brew.grain_size
+                  value=brew.grain_size
+                  ></label>
+                  <datalist id="markers">
+                  <option value="1"></option>
+                  <option value="2"></option>
+                  <option value="3"></option>
+                  <option value="4"></option>
+                  <option value="5"></option>
+                  <option value="6"></option>
+                  <option value="7"></option>
+                  <option value="8"></option>
+                  <option value="9"></option>
+                  <option value="10"></option>
+                </datalist>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <input min="1" max="10"
+              type="hidden"
+              class="form-control"
+              id="grain"
+              required
+              [(ngModel)]=brew.grain_size
+              name="grain"
+            />
+          </div>
+        </tr>
+          <tr>
+            <td colspan="3">
+            <label for="delay">Delay</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <label class="delay">
+                <input type="range" id="myrange2" name="delay"
+                 min="0" max="60"
+                 [disabled]="running"
+                 [(ngModel)]=this.brew.delay
+                 value=this.brew.delay
+                 style="float: right;"
+                 >
+              </label>
+
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+            <input min="1" max="60"
+              type="hidden"
+              class="form-control"
+              id="delay"
+              required
+              [(ngModel)]=this.brew.delay
+              name="delay"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr style="height:3px;border-width:0;color:white;background-color:white">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <button (click)="checked_brewit()"
+            [disabled]="running && countdown"
+            [hidden]="machine_levels_empty"
+            name="brewit"
+            type="submit"
+            class="btn btn-success"
+            >Brew Coffee</button>
+            <h4 [hidden]="!machine_levels_empty">Coffee machine is currently unavailable due to empty water or coffee beans!</h4>
+          </td>
+        </tr>
+      </table>
+  <div *ngIf="submitted">
+    <h4>Coffee was brewed successfully!</h4>
+  </div>
+  <p>
+    <img src="assets/gijoe.jpg" alt="Cup of Joe" style="float:right" width="300" height="270" />
+  </p>
+  <p>
+    <img src="assets/marching-coffee.gif"
+    alt="Walking Coffee"
+    style="float:left"
+    width="333" height="250"
+    [hidden]="!running"/>
+  </p>
+
+

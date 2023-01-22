@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  apache:
+    image: httpd:latest
+    container_name: my-apache-app
+    ports:
+    - '8080:80'
+    volumes:
+    - ./website:/var/www/html
+  web:
+    build: ./coffee-app
+    ports:
+    - "80:80"
+    links:
+    - node
+    volumes:
+    - /home/kg/Code/coffee/coffee-app/dist
+  node:
+    build: ./coffee-node-app
+    ports:
+    - "8081:8081"
+    links:
+    - redis
+  redis:  
+    image: redis:alpine
+    container_name: coffee-redis
+    volumes:
+        - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+        - "6379"
+
+#The default username and password is 'root' and 'gQROiOk8LLLX'.
+

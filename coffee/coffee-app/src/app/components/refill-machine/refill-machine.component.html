@@ -1,0 +1,46 @@
+<div class="fill">
+  <div class="col-md-6">
+    <h4>Refill Coffee Machine</h4>
+  </div>
+</div>
+<div>
+  <p>
+    <img src="assets/applecoffeemachine.jpg" alt="Coffee Machine" style="float:left" width="325" height="325" />
+  </p>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <table>
+        <tr>
+          <div class="form-group">
+            <label for="water">Water (max 480)</label>
+            <input min="1" max="480"
+              type="number"
+              class="form-control"
+              id="water"
+              required
+              [(ngModel)]=machine.water
+              name="water"
+            />
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <label for="beans">Beans (max 240)</label>
+            <input min="1" max="240"
+              type="number"
+              class="form-control"
+              id="beans"
+              required
+              [(ngModel)]=machine.beans
+              name="beans"
+            />
+          </div>
+        </tr>
+      </table>
+        <button (click)="refill()" type="submit" class="btn btn-success">Refill Machine</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Coffee machine was re-supplied successfully!</h4>
+    </div>
+  </div>
+</div>

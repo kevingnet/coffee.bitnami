@@ -1,0 +1,52 @@
+  <div class="level">
+    <div class="col-md-6">
+      <h4 >View <span style="color: #00BFFF">Water</span>-<span style="color: #8B4513">Beans</span> <span style="color: #aaa"> Levels</span></h4>
+    </div>
+  </div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+    <table>
+      <tr>
+        <td colspan="1">
+            <img src="assets/fancycoffeemachine.jpg" alt="Coffee Machine" layout-align="space-between center"  width="500" height="510" />
+        </td>
+
+      </tr>
+        <td colspan="1">
+        <table >
+          <tr>
+            <div class="form-group">
+              <label for="water"><span style="color: #00BFFF">Water Level:</span> <b> {{levels.water}}%</b></label>
+              <progress class="water"  value={{levels.water}} min="0" max="100"> {{levels.water}}% </progress>
+              <input
+              type="hidden"
+              class="form-control"
+              id="water"
+              required
+              [(ngModel)]="levels.water"
+              name="water"
+            />
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <label for="beans"><span style="color: #8B4513">Beans Level:</span> <b> {{levels.beans}}%</b></label>
+              <progress class="beans"  value={{levels.beans}} min="0" max="100"> {{levels.beans}}% </progress>
+              <input
+              type="hidden"
+              class="form-control"
+              id="beans"
+              required
+              [(ngModel)]="levels.beans"
+              name="beans"
+            />
+            </div>
+          </tr>
+          <tr>
+            <button (click)="level()" type="submit" class="btn btn-success">Refresh</button>
+          </tr>
+      </table>
+    </table>
+  </div>
+</div>
+
