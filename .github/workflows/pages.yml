@@ -15,8 +15,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,19 +33,11 @@ jobs:
           npm ci --legacy-peer-deps
           npm run build
           touch dist/CoffeeApp/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: coffee/coffee-app/dist/CoffeeApp
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: coffee/coffee-app/dist/CoffeeApp
       - id: deployment
         uses: actions/deploy-pages@v4
