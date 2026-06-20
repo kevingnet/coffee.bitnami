@@ -1,40 +1,54 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-const baseUrl = 'http://35.81.164.71:8081';
-//const baseUrl = 'http://localhost:8081';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+import { CoffeeEngine } from './coffee-engine';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoffeeService {
+  private readonly engine = new CoffeeEngine();
 
   constructor(private http: HttpClient) { }
 
-  brew(cup_size: any, grain_size: any, delay: any): Observable<any> {
-    let body = new HttpParams({
-      fromObject : {
-        'cup_size' : cup_size,
-        'grain_size' : grain_size,
-        'delay' : delay
+  brew(cup_size: number | undefined, grain_size: number | undefined, delayMs: number | undefined): Observable<{ water: number; beans: number }> {
+    if (environment.useClientEngine) {
+      try {
+        const result = this.engine.brew(cup_size ?? 5, grain_size ?? 5, delayMs ?? 0);
+        return of(result).pipe(delay(150));
+      } catch (err) {
+        return throwError(() => err);
       }
-    })
-    return this.http.post(`${baseUrl}/brew`, body);
+    }
+    const body = new HttpParams({
+      fromObject: {
+        cup_size: String(cup_size),
+        grain_size: String(grain_size),
+        delay: String(delayMs),
+      }
+    });
+    return this.http.post<{ water: number; beans: number }>(`${environment.apiUrl}/brew`, body);
   }
 
-  refill(water: any, beans: any): Observable<any> {
-    let body = new HttpParams({
-      fromObject : {
-        'water' : water,
-        'beans' : beans
+  refill(water: number | undefined, beans: number | undefined): Observable<{ water: number; beans: number }> {
+    if (environment.useClientEngine) {
+      return of(this.engine.refill(water, beans)).pipe(delay(100));
+    }
+    const body = new HttpParams({
+      fromObject: {
+        water: String(water),
+        beans: String(beans),
       }
-    })
-    return this.http.post(`${baseUrl}/refill`, body);
+    });
+    return this.http.post<{ water: number; beans: number }>(`${environment.apiUrl}/refill`, body);
   }
 
-  levels(): Observable<any> {
-    console.log("CoffeeService levels");
-    return this.http.get(`${baseUrl}/level`);
+  levels(): Observable<{ water: number; beans: number }> {
+    if (environment.useClientEngine) {
+      return of(this.engine.levels());
+    }
+    return this.http.get<{ water: number; beans: number }>(`${environment.apiUrl}/level`);
   }
 }

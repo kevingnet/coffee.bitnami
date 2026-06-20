@@ -119,17 +119,20 @@ app.post("/brew", (req, res) => {
 
   if(req.body) {
     if (req.body.cup_size) {
-      brew.cup_size = req.body.cup_size;
-    }  
+      cup_size = req.body.cup_size;
+    }
     if (req.body.grain_size) {
-      brew.grain_size = req.body.grain_size;
-    }    
+      grain_size = req.body.grain_size;
+    }
     if (req.body.delay) {
-      brew.delay = req.body.delay;
+      delay = req.body.delay;
     }
   }
+  brew.cup_size = cup_size;
+  brew.grain_size = grain_size;
+  brew.delay = delay;
 
-  sz = parseInt(cup_size, 10);
+  const sz = parseInt(String(cup_size), 10);
   let sub_water = Brew.WATER_FACTOR * sz;
   let sub_grain = Brew.GRAIN_FACTOR * sz;
 

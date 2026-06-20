@@ -1,0 +1,1 @@
+{"ast":null,"code":"export let Machine = /*#__PURE__*/(() => {\n  class Machine {}\n\n  Machine.MAX_WATER = 480;\n  Machine.MAX_BEANS = 240;\n  return Machine;\n})();","map":null,"metadata":{},"sourceType":"module"}

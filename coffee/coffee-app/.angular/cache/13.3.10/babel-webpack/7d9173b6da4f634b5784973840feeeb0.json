@@ -1,0 +1,1 @@
+{"ast":null,"code":"export let Brew = /*#__PURE__*/(() => {\n  class Brew {}\n\n  Brew.MAX_DELAY = 60; //60 seconds\n\n  Brew.SIZE_TALL = 4;\n  Brew.SIZE_GRANDE = 5;\n  Brew.SIZE_VENTI = 6;\n  Brew.GRAIN_FACTOR = 1;\n  Brew.WATER_FACTOR = 4;\n  Brew.NO_DELAY = 0;\n  Brew.DEFAULT_GRANULARITY = 5;\n  return Brew;\n})();","map":null,"metadata":{},"sourceType":"module"}
