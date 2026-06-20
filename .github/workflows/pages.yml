@@ -33,6 +33,7 @@ jobs:
           npm ci --legacy-peer-deps
           npm run build
           touch dist/CoffeeApp/.nojekyll
+          cp dist/CoffeeApp/index.html dist/CoffeeApp/404.html
       - uses: actions/configure-pages@v5
         with:
           enablement: true
