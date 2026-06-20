@@ -17,6 +17,7 @@ export class BrewCoffeeComponent implements OnInit, OnDestroy {
   countdown = 0;
   running = false;
   machine_levels_empty = false;
+  errorMessage = '';
   //constructor(private coffeeService: CoffeeService, private timeout: NodeJS.Timeout, private brew: Brew) {}
   constructor(private coffeeService: CoffeeService) {
     this.brew.cup_size = Brew.SIZE_GRANDE;
@@ -83,27 +84,34 @@ export class BrewCoffeeComponent implements OnInit, OnDestroy {
   }
 
   checked_brewit(): void {
+    this.errorMessage = '';
+    this.submitted = false;
     this.countdown = this.brew.delay || 0;
-    if(this.countdown > 0) {
-      this.openInterval(1000); //check every second
+    if (this.countdown > 0) {
+      this.openInterval(1000);
     } else {
+      this.running = true;
       this.brewit();
     }
   }
 
   brewit(): void {
-    console.log("brewit startstartstartstart");
-    this.coffeeService.brew(this.brew.cup_size, this.brew.grain_size, this.brew.delay)
+    this.running = true;
+    const savedDelay = this.brew.delay ?? 0;
+    this.coffeeService.brew(this.brew.cup_size, this.brew.grain_size, savedDelay)
       .subscribe({
-        next: (data) => {
-          //this.submitted = true;
-          //this.brew = {
-          //  cup_size: data.cup_size,
-          //  grain_size: data.grain_size,
-          //  delay: data.delay
-          //};
+        next: () => {
+          this.submitted = true;
+          this.errorMessage = '';
+          this.callCheckLevels();
+          setTimeout(() => { this.running = false; }, savedDelay > 0 ? 800 : 1800);
+          setTimeout(() => { this.submitted = false; }, 4000);
         },
-        error: (e) => console.error(e)
+        error: (e) => {
+          this.running = false;
+          this.errorMessage = e?.message ?? 'Could not brew — refill water and beans.';
+          this.callCheckLevels();
+        }
       });
-    }
+  }
 }

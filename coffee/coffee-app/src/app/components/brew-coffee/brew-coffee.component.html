@@ -192,13 +192,12 @@ hr.h4title {
             type="submit"
             class="btn btn-success"
             >Brew Coffee</button>
+            <h4 class="text-success" *ngIf="submitted">Coffee was brewed successfully!</h4>
+            <h4 class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</h4>
             <h4 [hidden]="!machine_levels_empty">Coffee machine is currently unavailable due to empty water or coffee beans!</h4>
           </td>
         </tr>
       </table>
-  <div *ngIf="submitted">
-    <h4>Coffee was brewed successfully!</h4>
-  </div>
   <p>
     <img src="assets/gijoe.jpg" alt="Cup of Joe" style="float:right" width="300" height="270" />
   </p>
