@@ -1,1 +1,0 @@
-{"ast":null,"code":"export let Levels = /*#__PURE__*/(() => {\n  class Levels {}\n\n  Levels.MAX_LEVEL = 100;\n  return Levels;\n})();","map":null,"metadata":{},"sourceType":"module"}
